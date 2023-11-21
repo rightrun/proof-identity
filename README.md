@@ -1,3 +1,8 @@
+### 安装
+```shell
+composer require rightrun/proof-identity
+```
+
 ### 一、 实名认证库
 #### 1. 工宣部实名
 
@@ -6,9 +11,6 @@
 阿里二要素
 https://market.aliyun.com/products/57000002/cmapi029454.html
 
-#### 3. 华为实名
-华为二要素
-https://support.huaweicloud.com/api-ivs/ivs_02_0010.html
 
 
 ### 二、实名测试
