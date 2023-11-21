@@ -1,0 +1,40 @@
+{
+  "name": "rightrun/proof-identity",
+  "minimum-stability": "dev",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "spomky-labs/php-aes-gcm": "~1.2",
+    "guzzlehttp/guzzle": ">=7.5.0"
+  },
+  "require-dev": {
+    "phpunit/php-file-iterator": "~3.0.5",
+    "phpunit/phpunit": "9.6.8",
+    "phpunit/php-invoker": "~3.1"
+  },
+  "authors": [
+    {
+      "name": "rightrun",
+      "email": "rightrun@163.com",
+      "homepage": "https://github.com/rightrun/proof-identity",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Onetrue\\ProofIdentity\\": "src/",
+      "ProofTest\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit ./tests/bootstrap.php -c phpunit.xml --colors=always"
+  },
+  "suggest": {
+    "ext-openssl": "Required to use HTTPS.",
+    "ext-json": "*"
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
+}
