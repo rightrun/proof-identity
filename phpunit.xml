@@ -1,21 +1,13 @@
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="./tests/bootstrap.php"
-         colors="false"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false" backupStaticAttributes="false" bootstrap="./tests/bootstrap.php" colors="false" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage includeUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">./tests</directory>
+    </include>
+  </coverage>
   <testsuites>
     <testsuite name="proof-identify">
       <directory suffix="Test.php">.</directory>
     </testsuite>
   </testsuites>
-
-  <filter>
-    <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">./tests</directory>
-    </whitelist>
-  </filter>
 </phpunit>
