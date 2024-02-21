@@ -26,23 +26,23 @@ class WlcnppaActivationTest extends TestCase
 
     //测试之前需要在防迷后台新增IP白名单
     //应用标识（APPID）
-    protected $appId = '13166205dcda4c5d9079339af793677d';
+    protected $appId = '678c9166a4da47fd9ccc3a015e02ee51';
     //游戏备案识别码（bizId）
     protected $bizId = '1101999999';
     //用户密钥（Secret Key）：
-    protected $secretKey = 'f0eb8ca5bd4aaebb2735cc2e669a4fe6';
+    protected $secretKey = 'c66942f679e9cffaafe3231a475b1392';
 
     //防迷后台启用并且复制测试码
     //测试码列表
     protected $checkcodeList = [
-        'testCase01' => 'y4tGXq',
-        'testCase02' => 'zmJErS',
-        'testCase03' => 'oMbz9Z',
-        'testCase04' => 'Wm58Xa',
-        'testCase05' => 'SJK8KC',
-        'testCase06' => 'TmBVTq',
-        'testCase07' => 'ngT2WS',
-        'testCase08' => 'KA9gwh',
+        'testCase01' => 'BYkBCW',
+        'testCase02' => 'NxVbgP',
+        'testCase03' => 'YyV6dX',
+        'testCase04' => 'rn3hRP',
+        'testCase05' => 'X6N3aD',
+        'testCase06' => 'kJtCaS',
+        'testCase07' => 'h7FPtG',
+        'testCase08' => 'WQ2p6n',
     ];
 
     public function testCase01(): void
@@ -62,9 +62,9 @@ class WlcnppaActivationTest extends TestCase
 
         try {
             $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -85,9 +85,9 @@ class WlcnppaActivationTest extends TestCase
 
         try {
             $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -109,9 +109,9 @@ class WlcnppaActivationTest extends TestCase
 
         try {
             $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -130,10 +130,10 @@ class WlcnppaActivationTest extends TestCase
         $data = $presetlist[mt_rand(0, count($presetlist) - 1)];
 
         try {
-            $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $response = $this->request($url, $data, 'get');
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -151,10 +151,10 @@ class WlcnppaActivationTest extends TestCase
         $data = $presetlist[mt_rand(0, count($presetlist) - 1)];
 
         try {
-            $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $response = $this->request($url, $data, 'get');
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -172,10 +172,10 @@ class WlcnppaActivationTest extends TestCase
         $data = $presetlist[mt_rand(0, count($presetlist) - 1)];
 
         try {
-            $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $response = $this->request($url, $data, 'get');
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -201,9 +201,9 @@ class WlcnppaActivationTest extends TestCase
 
         try {
             $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
@@ -236,38 +236,45 @@ class WlcnppaActivationTest extends TestCase
 
         try {
             $response = $this->request($url, $data);
-            $this->assertSame(0, $response['code'], "{$method} done => " . $response['errmsg']);
+            $this->assertSame(0, $response['errcode'], "{$method} done");
         } catch (\Exception $exception) {
-            $this->fail("{$method} Fail: " . $exception->getMessage());
+            $this->fail("{$method} Fail: " . $exception->getMessage() . '（' . $exception->getCode() . '）');
         }
     }
 
-    protected function request($url, $data)
+    protected function request($url, $data, $method = 'post')
     {
         $providerConfig = new WlcProofConfig($this->appId, $this->secretKey, $this->bizId);
         $manager = new ProofIdentifyManager(WlcProofIdentify::class, $providerConfig);
 
         $provider = $manager->getProvider();
-
-        $requestBody = $provider->createBody($data);
-        $sign = $provider->createSign($requestBody);
-        $headers = $provider->getHeaders($sign);
-
         try {
             $client = new Client([
-                'timeout' => 3,
-                'headers' => $headers
+                'timeout' => 3
             ]);
-            $response = $client->post($url, ['body' => $requestBody]);
+            if (strtolower($method) == 'post') {
+                $requestBody = $provider->createBody($data);
+                $sign = $provider->createSign($requestBody);
+                $headers = $provider->getHeaders($sign);
+                $response = $client->post($url, ['body' => $requestBody, 'headers' => $headers]);
+            } else if (strtolower($method) == 'get') {
+                $sign = $provider->createSign($data);
+                $headers = $provider->getHeaders($sign);
+                $url = $url . (strpos($url, '?') === false ? '?' : ':') . http_build_query($data);
+                $response = $client->get($url, ['headers' => $headers]);
+            } else {
+                throw new \Exception('unknow request method!');
+            }
+
             $statusCode = $response->getStatusCode();
             $respBody = $response->getBody()->getContents();
             $respBody = json_decode($respBody, true);
             if ($respBody['errcode'] != 0) {
-                throw new \Exception($respBody['errmsg']);
+                throw new \Exception($respBody['errmsg'], $respBody['errcode']);
             }
-            return $requestBody;
+            return $respBody;
         } catch (\Exception $exception) {
-            throw new \Exception($exception->getMessage());
+            throw new \Exception($exception->getMessage(), $exception->getCode());
         }
     }
 }
