@@ -28,8 +28,10 @@ $ phpunit --version
 ```shell
 
 #单个测试
-#工宣部
+#国家游戏防沉迷实名测试
 phpunit --bootstrap tests/bootstrap.php tests/Cases/WlcnppaProofTest.php
+#国家游戏防沉迷系统账号激活单元测试
+phpunit --bootstrap tests/bootstrap.php tests/Cases/WlcnppaActivationTest.php
 
 
 #阿里 

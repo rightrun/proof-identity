@@ -244,7 +244,8 @@ class WlcProofIdentify extends ProofIdentifyProvider
     public function createBody($string, $json = true)
     {
         $encString = $this->aesEncrypt($string);
-        $json = '{"data":"' . $encString . '"}';
+        //JSON需要不经过转义数据
+        $json = json_encode(['data' => $encString], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         return $json;
     }
 
