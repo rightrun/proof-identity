@@ -26,23 +26,23 @@ class WlcnppaActivationTest extends TestCase
 
     //测试之前需要在防迷后台新增IP白名单
     //应用标识（APPID）
-    protected $appId = '678c9166a4da47fd9ccc3a015e02ee51';
+    protected $appId = '7596e2fe57ba4848b74a5833136c7acd';
     //游戏备案识别码（bizId）
     protected $bizId = '1101999999';
     //用户密钥（Secret Key）：
-    protected $secretKey = 'c66942f679e9cffaafe3231a475b1392';
+    protected $secretKey = 'b4124eb1051c5a8eae40ab1c9b89bf66';
 
     //防迷后台启用并且复制测试码
     //测试码列表
     protected $checkcodeList = [
-        'testCase01' => 'BYkBCW',
-        'testCase02' => 'NxVbgP',
-        'testCase03' => 'YyV6dX',
-        'testCase04' => 'rn3hRP',
-        'testCase05' => 'X6N3aD',
-        'testCase06' => 'kJtCaS',
-        'testCase07' => 'h7FPtG',
-        'testCase08' => 'WQ2p6n',
+        'testCase01' => 'gkqky7',
+        'testCase02' => '86QkMY',
+        'testCase03' => 'cQybYM',
+        'testCase04' => 'TmAqt3',
+        'testCase05' => 'b9Wj3s',
+        'testCase06' => 'aveZMM',
+        'testCase07' => 'tQacCt',
+        'testCase08' => 'eo7sY9',
     ];
 
     public function testCase01(): void
